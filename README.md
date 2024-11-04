@@ -21,6 +21,6 @@ Multiple installations of git may conflict, not every edge case has been tried.
 
 ## How to Run
 - System-wide installation:
-  - `iex "(& {$(irm https://raw.githubusercontent.com/lj-sec/Install-Git/Install-Git.ps1)})"`
+  - `iex "(& {$(irm https://raw.githubusercontent.com/lj-sec/Install-Git/refs/heads/main/Install-Git.ps1)})"`
 - Forced user installation:
-  - `iex "(& {$(irm https://raw.githubusercontent.com/lj-sec/Install-Git/Install-Git.ps1)} arg -UserInstall)"`
+  - `iex "(& {$(irm https://raw.githubusercontent.com/lj-sec/Install-Git/refs/heads/main/Install-Git.ps1)} arg -UserInstall)"`
