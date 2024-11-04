@@ -1,7 +1,9 @@
 # Install-Git.ps1
 A PowerShell script to install the latest 64-bit Git for Windows with installer-selected defaults and minimal user interaction, created because school-managed computers are reset on reboot and do not come preinstalled with Git.
 
-Comes will option to set global user.name and user.password.
+Also found here: https://github.com/ravesec/eku-ccdc/blob/main/scripts/windows/Install-Git.ps1
+
+Comes will option to configure global user.name and user.email.
 
 Multiple installations of git may conflict, not every edge case has been tried.
 
