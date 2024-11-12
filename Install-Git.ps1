@@ -142,10 +142,11 @@ else
     Write-Warning "Git is not in the `$PATH"
     if ($gitPath -ne "")
     {
+        $ErrorActionPreference = Stop
         Write-Host "Attempting to add Git to `$PATH..."
         try
         {
-            [System.Environment]::SetEnvironmentVariable("Path", $env:PATH + ";$gitPath\cmd", $envVarTarget) -ErrorAction Stop
+            [System.Environment]::SetEnvironmentVariable("Path", $env:PATH + ";$gitPath\cmd", $envVarTarget)
             Write-Host "Sucessfully added Git to path"
             Write-Warning "Note: must restart PowerShell instance due to manual add"
         }
@@ -153,6 +154,7 @@ else
         {
             Write-Warning "Git could not be added to path"
         }
+        $ErrorActionPreference = SilentlyContinue
     }
     else
     {
