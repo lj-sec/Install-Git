@@ -143,22 +143,21 @@ else
     if ($gitPath -ne "")
     {
         Write-Host "Attempting to add Git to `$PATH..."
-        [System.Environment]::SetEnvironmentVariable("Path", $env:PATH + ";$gitPath\cmd", $envVarTarget)
+        try
+        {
+            [System.Environment]::SetEnvironmentVariable("Path", $env:PATH + ";$gitPath\cmd", $envVarTarget) -ErrorAction Stop
+            Write-Host "Sucessfully added Git to path"
+            Write-Warning "Note: must restart PowerShell instance due to manual add"
+        }
+        catch
+        {
+            Write-Warning "Git could not be added to path"
+        }
     }
     else
     {
         # Git did not install in a normal location and did not add itself to the path
         $noPathNoLocation = $true
-    }
-
-    if ($env:PATH -ilike "*\Git\cmd*")
-    {
-        Write-Host "Sucessfully added Git to path"
-        Write-Warning "Note: must restart PowerShell instance due to manual add"
-    }
-    else
-    {
-        Write-Warning "Git could not be added to path"
     }
 }
 
