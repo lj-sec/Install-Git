@@ -18,7 +18,6 @@ Git will cancel the installation if:
 Multiple installations of git may conflict, not every edge case has been tried
 RUN AT OWN RISK
 
-Multiple inst
 .EXAMPLE
 iex "(& {$(irm https://raw.githubusercontent.com/lj-sec/Install-Git/Install-Git.ps1)})"
 
