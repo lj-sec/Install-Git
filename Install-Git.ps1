@@ -142,7 +142,7 @@ else
     Write-Warning "Git is not in the `$PATH"
     if ($gitPath -ne "")
     {
-        $ErrorActionPreference = Stop
+        $ErrorActionPreference = 'Stop'
         Write-Host "Attempting to add Git to `$PATH..."
         try
         {
@@ -154,7 +154,7 @@ else
         {
             Write-Warning "Git could not be added to path"
         }
-        $ErrorActionPreference = SilentlyContinue
+        $ErrorActionPreference = 'SilentlyContinue'
     }
     else
     {
